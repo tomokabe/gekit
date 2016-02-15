@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212120255) do
+ActiveRecord::Schema.define(version: 20160214083131) do
+
+  create_table "kouens", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "image_url",  limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "gekidan",    limit: 255
+    t.string   "writer",     limit: 255
+    t.string   "director",   limit: 255
+    t.string   "cast",       limit: 255
+    t.text     "detail",     limit: 65535
+    t.text     "nichiji",    limit: 65535
+    t.string   "basho",      limit: 255
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.string   "name",       limit: 255
