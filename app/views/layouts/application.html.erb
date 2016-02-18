@@ -5,20 +5,52 @@
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
+      <title>Gekit</title>
     </head>
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">Gekit</a></h1>
-      </div>
-    </header>
 
-    <%= yield %>
+<div id="top">
+<div id="header">
+<h1><a href="index.html">Gekit</a></h1>
+<div id="menu">
+<ul>
+<li><a href="#top">トップ <span class="en">top</span></a></li>
+         <li><a href="#">新着 <span class="en">New</span></a></li>
+        <li><a href="#">公演検索 <span class="en">Search</span></a></li>
+        <li><a href="#">レビュー<span class="en">Review</span></a></li>
+        <li><a href="#">ログアウト <span class="en">log out</span></a></li>
+        
+</ul>
+</div>
+</div><br>
+<div id="sub">
+            <h3>ともか　さん</h3>
+            <ul>
+              <Div Align="right">東京都　　20代</Div>
+              <iframe width="195" height="195" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%80%80%E5%8A%87%E5%A0%B4&key=AIzaSyDdU6ChubMhVgCuKwhPUM-DyqppRJTi9do" allowfullscreen></iframe>
+               <li><a href="index.html">2件のレビュー</a></li>
+               <li><a href="index.html">レビューを投稿する</a></li>
+            </ul><br>
 
-    <footer>
-      <p>
-        Copyright Gekit 2016.
-      </p>
-    </footer>
+
+            <h3>公演の検索</h3>
+            <ul>
+               <li><a href="index.html">日時から探す</a></li>
+               <li><a href="index.html">場所から探す</a></li>
+               <li><a href="index.html">キーワードから探す</a></li>
+            </ul><br>
+
+</div>
+
+
+<div id="content">
+<div id="main">
+<%= yield %>
+  </div></div>
+
+<div id="footer">
+<div class="copyright">Copyright &copy; Gekit 2016. All Rights Reserved.</div>
+</div>
+
   </body>
 </html>
