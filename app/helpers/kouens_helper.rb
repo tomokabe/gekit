@@ -1,0 +1,2 @@
+module KouensHelper
+end
