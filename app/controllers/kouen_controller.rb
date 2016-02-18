@@ -2,8 +2,11 @@ class KouenController < ApplicationController
 
 
   def index
-    @kouen = Kouen.all
+
     end
 
+  def search
+
+  end
 
 end
