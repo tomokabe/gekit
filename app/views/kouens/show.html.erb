@@ -1,1 +1,4 @@
 <%= @kouen.title %>
+<% @kouen.reviews.each do |review| %>
+<%= review.review %>
+<% end %>
