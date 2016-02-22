@@ -2,7 +2,25 @@
       現在上演中の公演
     </h3>
 
-<table class="now">
+<ul>
+<% @kouens.each do |kouen| %>
+<li>
+<a href="/kouens/<%= kouen.id %>"> <img src="<%= @kouen.image_url %>" width="130" height=" 150" align="left"></a>
+<div class="thumbnail__caption">
+<h3 class="text-xsmall text-overflow" title="<%= kouen.title %>">
+<span><i class="icon-rate-60 text-xxsmall opacity-60" title=""></i></span><%= kouen.title %>
+</h3>
+<p class="text-small">
+<span class="rating-star"><i class="star-actived rate-[ここに評価を表示]0"></i>
+</span>
+</p>
+</div>
+</li>
+<% end %>
+</ul>
+
+
+<br><table class="now">
     <tr>
       <td><img src="http://stage.corich.jp/img_stage/l/stage57117_1.jpg?1455768525" width="100" height="130"></td>
     </tr>

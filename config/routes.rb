@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get '/kouens/search' => 'kouens#search' #公演検索
     get '/kouens/:id' => 'kouens#show' #公演詳細画面
     get   '/kouens/:id/review'   =>  'kouens#review' #レビュー一覧
-    get   '/kouens/new'  =>  'kouens#new' #レビュー投稿画面
+    get   '/kouens/:id/new'  =>  'kouens#new' #レビュー投稿画面
     post  '/kouens'      =>  'kouens#create' #レビュー投稿機能
 
     

@@ -4,6 +4,8 @@ class Scraping
 
   def self.exec
     agent = Mechanize.new
+    agent.read_timeout = 100 # 100sec timeout
+    agent.ignore_bad_chunking = true
     page = agent.get("http://stage.corich.jp/index_now_stage.php")
     urls = []
     elements = page.search('.cellStage a')
@@ -27,6 +29,8 @@ class Scraping
     end
     title = title_tag.inner_text
 
+    image_url = page.at('.stageImg a img')[:src] if page.at('.stageImg a img')
+
     gekidan_tag = page.at('.divRight a')
     unless gekidan_tag
       puts "gekidanなし　url: #{url}です"
@@ -34,22 +38,15 @@ class Scraping
     end
     gekidan = gekidan_tag.inner_text
 
-    writer_tag = page.at('.cellScript td')
-    unless writer_tag
-      puts "writerなし　url: #{url}です"
+    nichiji_tag = page.at('.stageInfo .f16.fBold')
+    unless nichiji_tag
+      puts "nichijiなし　url: #{url}です"
       return
     end
-    writer = writer_tag.inner_text
+    nichiji = nichiji_tag.inner_text
 
-    director_tag = page.at('.cellDirector td')
-    unless director_tag
-      puts "directorなし　url: #{url}です"
-      return
-    end
-    director = director_tag.inner_text
-
-
-    Kouen.create(title: title, gekidan:gekidan, writer:writer, director: director)
+    kouen = Kouen.where(title: title, gekidan: gekidan, image_url: image_url, nichiji:nichiji).first_or_initialize
+    kouen.save
   end
 
 end
