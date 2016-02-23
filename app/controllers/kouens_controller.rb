@@ -1,4 +1,6 @@
 class KouensController < ApplicationController
+before_action :authenticate_user!, only: :search
+  
   def show
     @kouen = Kouen.find(params[:id])
   end

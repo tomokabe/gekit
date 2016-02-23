@@ -48,3 +48,5 @@ end
 gem 'mechanize'
 
 gem 'devise'
+
+gem 'paperclip'
