@@ -13,7 +13,7 @@ before_action :authenticate_user!, only: :new
 
   private
   def create_params
-  params.require(:review).permit(:title, :rate, :review).merge(kouen_id: params[:kouen_id])
+  params.require(:review).permit(:title, :rate, :review).merge(kouen_id: params[:kouen_id], user_id: current_user.id)
   end
 
 

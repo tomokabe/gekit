@@ -5,6 +5,7 @@ before_action :authenticate_user!, only: :search
     @kouen = Kouen.find(params[:id])
   end
 
+
   def create
  Review.create(name: params[:name], image: params[:image], text: params[:text])
   end

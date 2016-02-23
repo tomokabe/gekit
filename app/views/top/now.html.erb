@@ -1,0 +1,19 @@
+<h3>
+      現在上演中の公演
+    </h3>
+
+<% @kouens.each do |kouen| %>
+<table class="now" style="float:left;">
+    <tr>
+      <td><img src="<%= kouen.image_url %>" width="100" height="130"></td>
+    </tr>
+    <tr>
+      <td><h6><a href="/kouens/<%= kouen.id %>"><%= kouen.title %></a></h6>
+</td>
+    </tr>
+    <tr>
+      <td><small><a href="#"><%= kouen.gekidan %></a></small>
+</td>
+    </tr>
+</table>
+<% end %>
