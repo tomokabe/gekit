@@ -2,18 +2,26 @@
 
 <div class="bigbox">
   <img src="<%= @kouen.image_url %>" width="130" height=" 150" align="left">
-  <big><h6><%= @kouen.title %></h6></big><br>
+  <a href="#"><Div Align="right"><%= @kouen.area %></Div></a>
+  <big><strong><%= @kouen.title %></strong></big><br>
   <a href="#"><Div Align="right"><%= @kouen.gekidan %></Div></a>
-  脚本 <%= @kouen.writer %>  演出 <%= @kouen.director %><br><br>
-  <strong><%= @kouen.nichiji %></strong>
+  <strong>脚本</strong> <%= @kouen.writer %><br>
+  <strong>演出</strong> <%= @kouen.director %><br><br>
+  <big><strong><%= @kouen.nichiji %></strong></big>
 
 <br clear="left"><br>
 
-出演者 <%= @kouen.cast %><br><br>
+  <strong>出演者</strong><br>
+ <%= @kouen.cast %><br><br>
 
-詳細　<%= @kouen.detail %><br><br>
+ <strong>タイムテーブル</strong><br>
+ <p><%= @kouen.timetable %></p><br><br>
 
-会場　<%= @kouen.basho %><br><br>
+ <strong>詳細</strong><br>
+ <%= @kouen.detail %><br><br>
+
+ <strong>会場</strong><br>
+ <%= @kouen.basho %><br><br>
 
 <% @kouen.reviews.each do |review| %>
 <%= review.review %>
