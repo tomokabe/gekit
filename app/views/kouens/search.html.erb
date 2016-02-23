@@ -1,32 +1,40 @@
+  <div id="main_cnt_wrapper">
+    <div id="yjContentsBody">
+      <div class="yjContainer">
+        <span class="yjGuid"><a id="yjContentsStart" name="yjContentsStart"></a><img alt="ここから本文です" height="1" src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1"></span>
+        <div id="yjMain">
+          <article class="section">
+            <div class="container">
+              <header class="header header--section">
+                <h2 class="text-middle">
+                  <i class="icon-movie color-gray-light"></i>作品を検索
+                </h2>
+              </header>
+              <%= form_tag('/kouens/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="作品名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+              <% end %>
+              <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+              </form>
+            </div>
+          </article>
+          <article class="section">
+            <div class="container">
+              <header class="header header--section">
+                <h2 class="text-middle">
+                  <i class="icon-movie color-gray-light"></i>検索結果
+                </h2>
+              </header>
+
+
 <% @kouens.each do |kouen| %>
-  <%= kouen.title %>
-<% end %>
-
-
-
-
-  <div class="bigbox">
-  <img src="http://stage.corich.jp/img_stage/l/stage56396_1.jpg?1455779791" width="30%" height="40%" align="left">
-  <big><h6><a href="#">逆鱗</a></h6></big><br>
-  <a href="#"><Div Align="right">NODA・MAP</Div></a>
-  脚本 野田秀樹  演出 野田秀樹<br><br>
-  <strong>期間 2016/01/29(金) ～ 2016/03/13(日)</strong>
-  </div>
-
 <br clear="left"><br>
-<div class="bigbox">
-  <img src="http://stage.corich.jp/img_stage/l/stage56396_1.jpg?1455779791" width="30%" height="40%" align="left">
-  <big><h6><a href="#">逆鱗</a></h6></big><br>
-  <a href="#"><Div Align="right">NODA・MAP</Div></a>
-  脚本 野田秀樹  演出 野田秀樹<br><br>
-  <strong>期間 2016/01/29(金) ～ 2016/03/13(日)</strong>
+  <div class="searchresult">
+  <img src=" <%= kouen.image_url %>" width="30%" height="100%" align="left">
+  <big><h6><a href="#"> <%= kouen.title %></a></h6></big><br>
+  <a href="#"><Div Align="right"> <%= kouen.gekidan %></Div></a>
+  脚本  <%= kouen.writer %>  演出  <%= kouen.director %><br><br>
+  会場  <%= kouen.basho %> <br><br>
+  <strong>期間  <%= kouen.nichiji %></strong>
   </div>
 
-<br clear="left"><br>
-  <div class="bigbox">
-  <img src="http://stage.corich.jp/img_stage/l/stage56396_1.jpg?1455779791" width="30%" height="40%" align="left">
-  <big><h6><a href="#">逆鱗</a></h6></big><br>
-  <a href="#"><Div Align="right">NODA・MAP</Div></a>
-  脚本 野田秀樹  演出 野田秀樹<br><br>
-  <strong>期間 2016/01/29(金) ～ 2016/03/13(日)</strong>
-  </div>
+  <% end %>

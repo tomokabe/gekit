@@ -6,7 +6,8 @@
   <big><strong><%= @kouen.title %></strong></big><br>
   <a href="#"><Div Align="right"><%= @kouen.gekidan %></Div></a>
   <strong>脚本</strong> <%= @kouen.writer %><br>
-  <strong>演出</strong> <%= @kouen.director %><br><br>
+  <strong>演出</strong> <%= @kouen.director %><br>
+  <a href="/kouens/<%= @kouen.id %>/reviews/new">この作品のレビューを投稿する</a><br>
   <big><strong><%= @kouen.nichiji %></strong></big>
 
 <br clear="left"><br>
@@ -24,7 +25,7 @@
  <%= @kouen.basho %><br><br>
 
 <% @kouen.reviews.each do |review| %>
-<%= review.review %>
+  <li><%= review.review %></li>
 <% end %>
 
 </div>

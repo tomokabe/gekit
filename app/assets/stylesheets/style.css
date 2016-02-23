@@ -250,6 +250,15 @@ h1,h2,h3,h4,h5,h6 {
 
 }
 
+#main .searchresult{
+   width:95%;
+   background:#efefef;
+   font-size:12px;
+   text-align:left;
+   border:1px solid #aaa;
+   height:200px;
+}
+
 
 #naviSearch .navi01 input{
    padding:1px 2px;
