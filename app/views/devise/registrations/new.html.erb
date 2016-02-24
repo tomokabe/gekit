@@ -21,9 +21,19 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
+      <div class="label"><%= f.label :nickname %><br />
+            <%= f.text_field :nickname, placeholder: 'ニックネームを入力(必須)' %></div>
+            <div class="field">
+            <%= f.file_field :avatar %>
+            </div>
+
 
       <div class="actions">
         <%= f.submit "Sign up" %>
       </div>
+      <div class="more_link_box">
+          <strong>すでにアカウントを持っていますか？</strong>
+          <%= render "devise/shared/links" %>
+          </div>
     <% end %>
   </div>

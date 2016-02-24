@@ -1,0 +1,24 @@
+<%= current_user.id %>
+
+<img src="<%= current_user.avatar %>" width="130" height="150" align="left">
+<%=  current_user.nickname %> <span>さんのマイページ</span>
+
+<br clear="left"><br>
+
+
+<h3>
+      あなたが書いたレビュー
+    </h3>
+
+<div class="bigbox">
+
+<img src="<%= @kouen.image_url %>" width="130" height="150" align="left">
+<big><a href="#"><%= @kouen.title %></a></big><br>
+<a href="#"><Div Align="right"><%= @kouen.gekidan %></Div></a><br>
+
+<br clear="left"><br>
+  <h5>ネタばれ<Div Align="right">2016/01/30</Div></h5>
+<% @kouen.reviews.each do |review| %>
+<%= review.id %><%= review.review %>
+<% end %>
+</div>

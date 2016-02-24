@@ -5,5 +5,9 @@ class ApplicationController < ActionController::Base
     '/users/sign_in' # サインアウト後のリダイレクト先URL
   end
   protect_from_forgery with: :exception
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.for(:sign_up).push(:nickname, :avatar)
+    end
 end

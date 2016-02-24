@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
 before_action :authenticate_user!, only: :new
 
+  def show
+    @kouen = Kouen.find(params[:kouen_id])
+  end
+
   def new
     @kouen = Kouen.find(params[:kouen_id])
     @review = Review.new
