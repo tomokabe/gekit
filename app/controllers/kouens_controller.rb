@@ -7,7 +7,7 @@ before_action :authenticate_user!, only: :search
 
 
   def create
- Review.create(name: params[:name], image: params[:image], text: params[:text])
+ Review.create(nickname: params[:name], review: params[:text])
   end
 
 

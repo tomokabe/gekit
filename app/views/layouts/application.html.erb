@@ -15,26 +15,19 @@
 
 
 <div id="menu">
-<ul>
-<li><a href="/top">トップ <span class="en">Top</span></a></li>
-<li><a href="/top/now">上演中の公演 <span class="en">Now</span></a></li>
-        <li><a href="/kouens/search">公演検索 <span class="en">Search</span></a></li>
-        <li><a href="#">レビュー <span class="en">Review</span></a></li>
-        <li><div class="header__bar row">
-      <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-                  <a href="/users/<%= current_user.id %>">マイページ
-          <span class="en">My page</span></a>
-          <%= link_to 'ログアウト Log out', "/users/sign_out", method: :delete %>
-        </div>
-      <% else %>
-        <div class="grid-6">
-          <%= link_to "新規登録 Sign up", new_user_registration_path, class: 'post' %>
-        </div>
-        <div class="grid-6"><%= link_to "ログイン Log in", new_user_session_path, class: 'post' %>
-        </div>
+  <ul>
+    <li><a href="/top">トップ <span class="en">Top</span></a></li>
+    <li><a href="/top/now">上演中の公演 <span class="en">Now</span></a></li>
+    <li><a href="/kouens/search">公演検索 <span class="en">Search</span></a></li>
+    <% if user_signed_in? %>
+    <li><a href="/users/<%= current_user.id %>">マイページ<span class="en">My page</span></a></li>
+    <li><%= link_to 'ログアウト Log out', "/users/sign_out", method: :delete %></li>
+    <% else %>
+    <li><%= link_to "新規登録 Sign up", new_user_registration_path, class: 'post' %></li>
+    <li><%= link_to "ログイン Log in", new_user_session_path, class: 'post' %></li>
+
       <% end %>
-    </div></li>
+
         
 </ul>
 </div>
@@ -43,9 +36,10 @@
             <% if user_signed_in? %>
             <h3><%=  current_user.nickname %>さん</h3>
             <ul>
+              <img src="<%= current_user.avatar %>" width="50" height="50" align="left">
               <Div Align="right">東京都　　20代</Div>
               <iframe width="195" height="195" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%80%80%E5%8A%87%E5%A0%B4&key=AIzaSyDdU6ChubMhVgCuKwhPUM-DyqppRJTi9do" allowfullscreen></iframe>
-               <li><a href="index.html">2件のレビュー</a></li>
+               <li><a href="/users/<%=  current_user.id %>">レビューを見る</a></li>
                <li><a href="index.html">レビューを投稿する</a></li>
             </ul><br>
             <% end %>
@@ -53,6 +47,9 @@
             <h3>公演の検索</h3>
             <ul>
                <li><a href="/kouens/search">日時から探す</a></li>
+                <%= form_tag('/kouens/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="作品名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search">検索</i></button></input>
+              <% end %>
             </ul><br>
 
 </div>

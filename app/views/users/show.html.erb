@@ -1,6 +1,6 @@
 <%= current_user.id %>
 
-<img src="<%= current_user.avatar %>" width="130" height="150" align="left">
+<img src="<%= current_user.avatar %>" width="50" height="50" align="left">
 <%=  current_user.nickname %> <span>さんのマイページ</span>
 
 <br clear="left"><br>
@@ -13,12 +13,17 @@
 <div class="bigbox">
 
 <img src="<%= @kouen.image_url %>" width="130" height="150" align="left">
-<big><a href="#"><%= @kouen.title %></a></big><br>
-<a href="#"><Div Align="right"><%= @kouen.gekidan %></Div></a><br>
+<big><a href="/kouens/<%= @kouen.id %>"><%= @kouen.title %></a></big><br>
+<a href="/kouens/<%= @kouen.id %>"><Div Align="right"><%= @kouen.gekidan %></Div></a><br>
+<strong>脚本</strong> <%= @kouen.writer %><br>
+<strong>演出</strong> <%= @kouen.director %><br><br>
+<big><strong><%= @kouen.nichiji %></strong></big>
+
 
 <br clear="left"><br>
-  <h5>ネタばれ<Div Align="right">2016/01/30</Div></h5>
-<% @kouen.reviews.each do |review| %>
+<% current_user.reviews.each do |review| %>
+  <h5><%= review.title %><Div Align="right"><%= review.created_at %></Div></h5>
+
 <%= review.id %><%= review.review %>
 <% end %>
 </div>

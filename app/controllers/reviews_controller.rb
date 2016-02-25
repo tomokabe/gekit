@@ -11,13 +11,16 @@ before_action :authenticate_user!, only: :new
   end
 
   def create
+  binding.pry
  Review.create(create_params)
- redirect_to controller: :kouens, action: :index
+ kouen = Kouen.find(params[:kouen_id])
+ redirect_to kouen_path(kouen)
+
   end
 
   private
   def create_params
-  params.require(:review).permit(:title, :rate, :review).merge(kouen_id: params[:kouen_id], user_id: current_user.id)
+  params.permit(:title, :review).merge(user_id: current_user.id, kouen_id: params[:kouen_id])
   end
 
 

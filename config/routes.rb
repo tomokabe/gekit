@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get'users/:id' => 'users#show'
+  resources :users, only: :show
 
   resources :kouens, only: [:show, :create] do
     resources :reviews, only: [:new, :create, :show]
