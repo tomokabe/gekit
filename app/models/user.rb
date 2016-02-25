@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar,
                                       content_type: ["image/jpg","image/jpeg","image/png"]
 
+attr_accessor :area
+
 end
