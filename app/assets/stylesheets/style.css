@@ -65,7 +65,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #main {
-   display:inline;/* for IE6 */
+   display:inline;
    float:right;
    width:544px;
    margin:5px;
@@ -83,7 +83,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #pageTop {
-   /zoom:1;/* for IE6 */
+   /zoom:1;
    clear:both;
    background:#fff;
 }
@@ -136,9 +136,9 @@ h1,h2,h3,h4,h5,h6 {
    border-bottom:3px solid #0089a1;
    background:#fff;
    background:linear-gradient(top, #fff, #efefef);
-   background:-moz-linear-gradient(top, #fff, #efefef); /* Firefox用 */
-   background:-o-linear-gradient(top, #fff, #efefef); /* Opera用 */
-   background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#efefef)); /* Safari,Google Chrome用 */
+   background:-moz-linear-gradient(top, #fff, #efefef); 
+   background:-o-linear-gradient(top, #fff, #efefef); 
+   background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#efefef)); 
 }
 
 #menu li:first-child {
@@ -150,9 +150,9 @@ h1,h2,h3,h4,h5,h6 {
    text-decoration:none;
    background:#0F98AD;
    background:linear-gradient(top, #1EACBF, #0F98AD);
-   background:-moz-linear-gradient(top, #1EACBF, #0F98AD); /* Firefox用 */
-   background:-o-linear-gradient(top, #1EACBF, #0F98AD); /* Opera用 */
-   background:-webkit-gradient(linear, left top, left bottom, from(#1EACBF), to(#0F98AD)); /* Safari,Google Chrome用 */
+   background:-moz-linear-gradient(top, #1EACBF, #0F98AD); 
+   background:-o-linear-gradient(top, #1EACBF, #0F98AD); 
+   background:-webkit-gradient(linear, left top, left bottom, from(#1EACBF), to(#0F98AD)); 
 }
 
 #menu li a:hover {
@@ -160,9 +160,9 @@ h1,h2,h3,h4,h5,h6 {
    text-decoration:none;
    background:#0F98AD;
    background:linear-gradient(top, #1EACBF, #0F98AD);
-   background:-moz-linear-gradient(top, #1EACBF, #0F98AD); /* Firefox用 */
-   background:-o-linear-gradient(top, #1EACBF, #0F98AD); /* Opera用 */
-   background:-webkit-gradient(linear, left top, left bottom, from(#1EACBF), to(#0F98AD)); /* Safari,Google Chrome用 */
+   background:-moz-linear-gradient(top, #1EACBF, #0F98AD); 
+   background:-o-linear-gradient(top, #1EACBF, #0F98AD); 
+   background:-webkit-gradient(linear, left top, left bottom, from(#1EACBF), to(#0F98AD)); 
 }
 
 /* ========めいん======== */
