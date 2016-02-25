@@ -18,5 +18,6 @@ def move_to_index
 
   def search
     @kouens = Kouen.where('title LIKE ?', "%#{params[:keyword]}%")
+
   end
 end

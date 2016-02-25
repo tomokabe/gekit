@@ -8,20 +8,8 @@
               <header class="header header--section">
                 <h3>作品を検索</h3>
               </header>
-              <%= form_tag('/kouens/search', method: :get) do %>
+              <%= form_for('/kouens/search', method: :get) do %>
                 <input class="search__query" name="keyword" placeholder="作品名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search">検索</i></button></input>
-                <tr>
-                <th class="cellCategory">カテゴリー</th>
-                <td><select name="category_id">
-                <option value="">選択してください</option>
-                <option value="1">演劇</option>
-                <option value="2">舞踊・バレエ</option>
-                <option value="3">歌舞伎・伝統芸能</option>
-                <option value="4">ミュージカル</option>
-                <option value="5">オペラ</option>
-                <option value="6">その他</option>
-                </select></td>
-                </tr>
               <% end %>
               <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
               </form>

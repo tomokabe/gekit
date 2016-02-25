@@ -37,8 +37,8 @@
             <h3><%=  current_user.nickname %>さん</h3>
             <ul>
               <img src="<%= current_user.avatar %>" width="50" height="50" align="left">
-              <Div Align="right">東京都　　20代</Div>
-              <iframe width="195" height="195" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%80%80%E5%8A%87%E5%A0%B4&key=AIzaSyDdU6ChubMhVgCuKwhPUM-DyqppRJTi9do" allowfullscreen></iframe>
+              <Div Align="right"><%= current_user.area %></Div>
+              <iframe width="195" height="195" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=<%= current_user.area %>%E3%80%80%E5%8A%87%E5%A0%B4&key=AIzaSyDdU6ChubMhVgCuKwhPUM-DyqppRJTi9do" allowfullscreen></iframe>
                <li><a href="/users/<%=  current_user.id %>">レビューを見る</a></li>
                <li><a href="index.html">レビューを投稿する</a></li>
             </ul><br>
@@ -47,7 +47,7 @@
             <h3>公演の検索</h3>
             <ul>
                <li><a href="/kouens/search">日時から探す</a></li>
-                <%= form_tag('/kouens/search', method: :get) do %>
+                <%= form_for('/kouens/search', method: :get) do %>
                 <input class="search__query" name="keyword" placeholder="作品名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search">検索</i></button></input>
               <% end %>
             </ul><br>
