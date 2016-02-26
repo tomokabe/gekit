@@ -11,7 +11,7 @@ before_action :authenticate_user!, except: :search
   end
 
     def search
-    @kouens = Kouen.where('title LIKE ?', "%#{params[:keyword]}%")
+    @kouens = Kouen.where('title LIKE ?', "%#{params[:keyword]}%").page(params[:page]).per(5)
     end
 
 

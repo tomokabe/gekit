@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 before_action :authenticate_user!, only: :new
 
   def show
-    @kouen = Kouen.find(params[:kouen_id])
+    @kouen = Kouen.order("created_at DESC")
   end
 
   def new
@@ -11,7 +11,6 @@ before_action :authenticate_user!, only: :new
   end
 
   def create
-  binding.pry
  Review.create(create_params)
  kouen = Kouen.find(params[:kouen_id])
  redirect_to kouen_path(kouen)

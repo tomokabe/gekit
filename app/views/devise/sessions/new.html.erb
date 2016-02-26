@@ -1,27 +1,31 @@
- <div class="contents row">
-    <h2>Log in</h2>
+ <div class="form-wrapper">
+    <h2>ログインする</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <div class="field">
+      <div class="form-item">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>
       </div>
 
-      <div class="field">
+      <div class="form-item">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
-        <div class="field">
+        <div class="form-item">
           <%= f.label :remember_me %><br />
           <%= f.check_box :remember_me %>
         </div>
       <% end -%>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
+      <div class="button-panel">
+        <input type="submit" class="button" title="Sign In" value="Sign In"></input>
       </div>
     <% end %>
+      <div class="form-footer">
+    <p><a href="/users/sign_up">新規登録</a></p>
   </div>
+  </div>
+

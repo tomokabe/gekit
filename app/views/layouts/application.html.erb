@@ -21,10 +21,10 @@
     <li><a href="/kouens/search">公演検索 <span class="en">Search</span></a></li>
     <% if user_signed_in? %>
     <li><a href="/users/<%= current_user.id %>">マイページ<span class="en">My page</span></a></li>
-    <li><%= link_to 'ログアウト Log out', "/users/sign_out", method: :delete %></li>
+    <li><%= link_to 'ログアウト Sign out', "/users/sign_out", method: :delete %></li>
     <% else %>
     <li><%= link_to "新規登録 Sign up", new_user_registration_path, class: 'post' %></li>
-    <li><%= link_to "ログイン Log in", new_user_session_path, class: 'post' %></li>
+    <li><%= link_to "ログイン Sign in", new_user_session_path, class: 'post' %></li>
 
       <% end %>
 
