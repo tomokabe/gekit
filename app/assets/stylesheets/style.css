@@ -132,7 +132,7 @@ form {
   text-align: center;
   .page {
     a {
-      border: 1px solid $base;
+      border: 1px;
       padding: 3px 5px 3px 8px;
     }
   }
