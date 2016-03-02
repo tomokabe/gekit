@@ -37,6 +37,7 @@
             <h3><%=  current_user.nickname %>さん</h3>
             <ul>
               <img src="<%= current_user.avatar %>" width="50" height="50" align="left">
+              
               <Div Align="right"><%= current_user.area %></Div>
               <iframe width="195" height="195" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=<%= current_user.area %>%E3%80%80%E5%8A%87%E5%A0%B4&key=AIzaSyDdU6ChubMhVgCuKwhPUM-DyqppRJTi9do" allowfullscreen></iframe>
                <li><a href="/users/<%=  current_user.id %>">レビューを見る</a></li>
